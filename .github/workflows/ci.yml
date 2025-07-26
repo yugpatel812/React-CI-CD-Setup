@@ -18,3 +18,12 @@ jobs:
             run: node --version
           - name : " Clone repository"
             uses: actions/checkout@v4
+          - name: "Install dependencies"
+            run: npm install
+          - name: "list directory"
+            run: ls 
+          - name: "upload artifacts"
+            uses: actions/upload-artifact@v4
+            with:
+              name: build
+              path: dist
